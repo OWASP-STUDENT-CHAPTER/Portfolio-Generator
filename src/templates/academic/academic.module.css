@@ -1,0 +1,113 @@
+.container {
+  min-height: 100vh;
+  background-color: #fdfbf7;
+  color: #1f2421;
+  font-family: "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  padding: 5rem 1.5rem;
+  line-height: 1.7;
+}
+
+.wrapper {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 2px solid #002b49;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.name {
+  font-size: 2.4rem;
+  color: #002b49;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.institution {
+  font-size: 1.1rem;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.meta {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #002b49;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #002b49;
+  padding-bottom: 0.25rem;
+  margin: 2.5rem 0 1.25rem;
+}
+
+.pubItem {
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 3px solid #e0dcd3;
+}
+
+.pubTitle {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #1f2421;
+}
+
+.pubDesc {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0.25rem 0;
+}
+
+.pubLink {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.8rem;
+  color: #002b49;
+  font-weight: 600;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skillItem {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+  background: #ede8dc;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  color: #1f2421;
+}
+
+.footer {
+  margin-top: 5rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+}

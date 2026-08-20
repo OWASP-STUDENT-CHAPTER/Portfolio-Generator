@@ -1,0 +1,261 @@
+.container {
+  min-height: 100vh;
+  background-color: #fcfbf9;
+  color: #1a1918;
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  padding: 5rem 2rem;
+  line-height: 1.8;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #1a1918;
+  padding-bottom: 0.75rem;
+  margin-bottom: 3.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1.8fr 1.2fr;
+    align-items: center;
+  }
+}
+
+.headlineTag {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #c95d3b;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+  color: #1a1918;
+}
+
+.headline {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid #c95d3b;
+  padding-left: 1rem;
+}
+
+.bio {
+  font-size: 1.1rem;
+  color: #2c2b29;
+}
+
+.bio::first-letter {
+  font-size: 3.8rem;
+  float: left;
+  line-height: 0.8;
+  margin: 0.1rem 0.6rem 0 0;
+  font-family: serif;
+  font-weight: bold;
+  color: #1a1918;
+}
+
+.avatarCard {
+  text-align: center;
+}
+
+.avatar {
+  width: 100%;
+  max-width: 280px;
+  height: 340px;
+  object-fit: cover;
+  filter: grayscale(85%) contrast(110%);
+  border: 1px solid #ddd;
+  box-shadow: 12px 12px 0px #1a1918;
+}
+
+.socialRow {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+}
+
+.socialLink {
+  color: #1a1918;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 600;
+}
+
+.socialLink:hover {
+  color: #c95d3b;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #dedbd2;
+  margin: 4rem 0;
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sectionHeading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dedbd2;
+}
+
+.worksGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .worksGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.articleCard {
+  border-top: 1px solid #1a1918;
+  padding-top: 1.25rem;
+}
+
+.cardNum {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #c95d3b;
+  margin-bottom: 0.5rem;
+}
+
+.projectTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+  color: #1a1918;
+}
+
+.projectDesc {
+  font-size: 1rem;
+  color: #4a4845;
+  margin-bottom: 1rem;
+}
+
+.projectMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.8rem;
+}
+
+.tags {
+  color: #777;
+}
+
+.linkButton {
+  color: #1a1918;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid #1a1918;
+}
+
+.expRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #dedbd2;
+}
+
+@media (min-width: 640px) {
+  .expRow {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+.expDate {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.expRole {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.expCompany {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #c95d3b;
+  margin-bottom: 0.5rem;
+}
+
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skillItem {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid #1a1918;
+  background: transparent;
+  color: #1a1918;
+}
+
+.footer {
+  margin-top: 6rem;
+  padding-top: 2rem;
+  border-top: 2px solid #1a1918;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
