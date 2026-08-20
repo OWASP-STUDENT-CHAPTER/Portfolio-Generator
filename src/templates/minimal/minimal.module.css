@@ -1,0 +1,223 @@
+.container {
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: #171717;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 4rem 1.5rem 6rem;
+  line-height: 1.6;
+}
+
+.wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+  color: #111;
+}
+
+.headline {
+  font-size: 1.05rem;
+  color: #666;
+  margin: 0 0 1rem;
+  font-weight: 400;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 1.25rem;
+}
+
+.bio {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+}
+
+.socialRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: #333;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.socialLink:hover {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.section {
+  margin-bottom: 3.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.projectCard {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: transform 0.2s ease;
+}
+
+.projectCard:last-child {
+  border-bottom: none;
+}
+
+.projectTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.projectTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.projectLink {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.projectLink:hover {
+  text-decoration: underline;
+}
+
+.projectDesc {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 0 0.6rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  color: #666;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.timelineItem {
+  margin-bottom: 1.5rem;
+}
+
+.timelineHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.timelineRole {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.timelineDate {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.timelineCompany {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.35rem;
+}
+
+.timelineDesc {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skillBadge {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  color: #333;
+}
+
+.footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eaeaea;
+  font-size: 0.8rem;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerBadge {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}

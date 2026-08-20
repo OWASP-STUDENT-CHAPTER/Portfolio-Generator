@@ -1,0 +1,206 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ==========================================
+// User & Authentication Models (Auth.js)
+// ==========================================
+
+model User {
+  id            String    @id @default(cuid())
+  googleId      String?   @unique
+  email         String?   @unique
+  emailVerified DateTime?
+  name          String?
+  image         String?
+  profileImage  String?
+  role          String    @default("USER") // USER | ADMIN
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  lastLoginAt   DateTime  @default(now())
+
+  // Google Profile Photo & Visual Moderation State
+  googlePhotoUrl         String?
+  googlePhotoIsDefault   Boolean   @default(true)
+  googlePhotoEtag        String?
+  photoModerationStatus  String    @default("NOT_REQUIRED") // NOT_REQUIRED | PENDING | APPROVED | BLOCKED
+  photoModeratedAt       DateTime?
+  photoModerationVersion String?
+  photoContentHash       String?
+  lastApprovedPhotoUrl   String?
+
+  accounts      Account[]
+  sessions      Session[]
+  website       Website?
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ==========================================
+// Website & Content Models (Normalized)
+// ==========================================
+
+model Website {
+  id             String          @id @default(cuid())
+  username       String          @unique
+  templateId     String          @default("minimal")
+  published      Boolean         @default(true)
+  deactivated    Boolean         @default(false)
+  deactivatedAt  DateTime?
+  theme          String?         // JSON string for custom colors/overrides
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  userId         String          @unique
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  profile        Profile?
+  projects       Project[]
+  experiences    Experience[]
+  educations     Education[]
+  skills         Skill[]
+  socialLinks    SocialLink[]
+  customSections CustomSection[]
+}
+
+model Profile {
+  id          String   @id @default(cuid())
+  headline    String?
+  bio         String?
+  location    String?
+  avatarUrl   String?
+  resumeUrl   String?
+  websiteId   String   @unique
+  website     Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  imageUrl    String?
+  liveUrl     String?
+  sourceUrl   String?
+  tags        String   @default("") // Comma-separated tags
+  order       Int      @default(0)
+  websiteId   String
+  website     Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model Experience {
+  id          String   @id @default(cuid())
+  company     String
+  role        String
+  description String?
+  startDate   String?
+  endDate     String?
+  current     Boolean  @default(false)
+  order       Int      @default(0)
+  websiteId   String
+  website     Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model Education {
+  id          String   @id @default(cuid())
+  institution String
+  degree      String?
+  field       String?
+  startDate   String?
+  endDate     String?
+  current     Boolean  @default(false)
+  gpa         String?
+  order       Int      @default(0)
+  websiteId   String
+  website     Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model Skill {
+  id        String   @id @default(cuid())
+  name      String
+  category  String?  // Languages, Frameworks, Tools, Domains
+  order     Int      @default(0)
+  websiteId String
+  website   Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model SocialLink {
+  id        String   @id @default(cuid())
+  platform  String   // github, linkedin, twitter, instagram, leetcode, mail, website, etc.
+  url       String
+  order     Int      @default(0)
+  websiteId String
+  website   Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model CustomSection {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  order     Int      @default(0)
+  websiteId String
+  website   Website  @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+}
+
+model ReservedUsername {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  reason    String?
+  createdAt DateTime @default(now())
+}
+
+// ==========================================
+// Content Moderation Cache (Defense-in-Depth)
+// ==========================================
+
+model ModerationCache {
+  id            String   @id @default(cuid())
+  contentHash   String   @unique
+  isApproved    Boolean
+  decision      String   // ALLOW | BLOCK
+  reason        String?
+  policyVersion String   @default("v1")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([contentHash, policyVersion])
+}
+

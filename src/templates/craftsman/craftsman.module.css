@@ -1,0 +1,269 @@
+.container {
+  min-height: 100vh;
+  background-color: #f3ede2;
+  color: #1f1e1b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding: 4rem 1.5rem 6rem;
+  line-height: 1.65;
+}
+
+.wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  margin-bottom: 3.5rem;
+}
+
+.brandName {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a1917;
+  margin-bottom: 0.25rem;
+}
+
+.brandSubtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #78756e;
+  font-weight: 500;
+}
+
+.headerDivider {
+  width: 100%;
+  height: 1px;
+  background-color: #d8d2c5;
+  margin-top: 1.5rem;
+}
+
+/* Section Dividers with text */
+.sectionBlock {
+  margin-bottom: 3.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1a4338;
+  white-space: nowrap;
+}
+
+.sectionLine {
+  flex: 1;
+  height: 1px;
+  background-color: #d8d2c5;
+}
+
+/* Intro Greeting */
+.greeting {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  font-size: 2.75rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #191816;
+  margin: 0 0 1.5rem;
+}
+
+.introBio {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  font-size: 1.125rem;
+  color: #383531;
+  line-height: 1.75;
+}
+
+.thaparNote {
+  color: #736f66;
+}
+
+/* What I Make Items */
+.capabilitiesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.capabilityItem {
+  padding: 1.35rem 0;
+  border-bottom: 1px solid #dfd9cc;
+}
+
+.capabilityItem:first-child {
+  padding-top: 0;
+}
+
+.capabilityItem:last-child {
+  border-bottom: none;
+}
+
+.capabilityTitle {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #191816;
+  margin-bottom: 0.35rem;
+}
+
+.capabilityDesc {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  font-size: 1rem;
+  color: #5c5850;
+  margin: 0;
+}
+
+/* Projects Showcase */
+.projectShowcase {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #dfd9cc;
+}
+
+.projectShowcase:first-child {
+  padding-top: 0;
+}
+
+.projectShowcase:last-child {
+  border-bottom: none;
+}
+
+.projectTitleRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.projectTitle {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: #191816;
+}
+
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a4338;
+}
+
+.liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #1a4338;
+}
+
+.projectStory {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  font-size: 1.05rem;
+  color: #383531;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.projectLink {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a4338;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Closing callout */
+.closingNote {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  font-size: 1.05rem;
+  color: #383531;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.signatureWrapper {
+  margin-bottom: 3rem;
+}
+
+.signatureSvg {
+  width: 140px;
+  height: 50px;
+  color: #1a4338;
+  margin-bottom: 0.5rem;
+}
+
+.signeeName {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #78756e;
+}
+
+/* Reach Me Action Bar */
+.actionsRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1a4338;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.whatsappBtn:hover {
+  background-color: #13332b;
+}
+
+.reachLink {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #191816;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.reachLink:hover {
+  color: #1a4338;
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #d8d2c5;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8c887f;
+  display: flex;
+  justify-content: space-between;
+}
